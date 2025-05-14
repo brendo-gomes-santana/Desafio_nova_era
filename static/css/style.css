@@ -1,0 +1,210 @@
+
+/* Estilo que esta em volta de toda a aplicacao */
+.container{
+    display: flex;
+    flex-direction: column;
+
+    gap: 2em;
+    padding: 1em;
+
+    width: 100%;
+    max-width: 1440px;
+    margin: 3em auto;
+}
+
+/* Esse estilo é referente ao container que tem o tituto e botao de cadastrar */
+.container-titulo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding: 1em 0;
+
+    border-bottom: 1px solid var(--cor-vermelho);
+}
+
+/* Titulo */
+.container-titulo h1 {
+    color: var(--cor-vermelho);
+    font-size: 30px;
+}
+
+/* Botao para cadastrar */
+.container-titulo button {
+    font-size: 15px;
+    padding: 1em 2em;
+    border-radius: 13px;
+    border: none;
+
+    font-weight: bold;
+    
+    background-color: var(--cor-vermelho);
+    color: var(--cor-branco);
+    cursor: pointer;
+
+    transition: all 0.3s;
+}
+
+/* Efeito do botao para cadastrar */
+.container-titulo button:hover {
+    background-color: transparent;
+    border: 1px solid var(--cor-vermelho);
+    color: var(--cor-vermelho);
+}
+
+/* Aqui vai ter a configuracao geral do container que vai ficar as tarefas */
+.container-cards{
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* Estilo de cada tarefa */
+.card{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+    width: 100%;
+
+    padding: 1.5em 0;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+/* Estilo de cada botao que possui uma funcao (EDITAR, MAIS INFORMACOES E DELETAR) */
+.card .funcoes button {
+    padding: 0.5em 1em;
+    border-radius: 13px;
+    border: none;
+    font-weight: bold;
+    color: var(--cor-branco);
+    cursor: pointer;
+}
+
+/* Isso aqui é para tirar a ultima linha que criar a divisoria */
+.card:last-child{
+    border: none;
+}
+
+/* Estilo de todos os modais que aparece no projeto, isso seria a base de cada um */
+#model-cadastrar, #model-atualizar, #model-mais{
+    position: fixed;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: rgba(250, 250,250, 0.5);
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px);
+
+    z-index: 1000;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1em;
+}
+
+/* Estilo geral de todos os modais que aparece, que seria onde ficar a informaçoes */
+.container-model{
+    background-color: var(--cor-branco);
+    
+    display: flex;
+    flex-direction: column;
+
+    gap: 2em;
+
+    width: 100%;
+    max-width: 1080px;
+}
+
+/* Estilo geral de todos os modais, no caso o header que aparece o que o modal faz */
+.container-model div{
+    background-color: var(--cor-vermelho);
+    color: var(--cor-branco);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 1em;
+    height: 75px;
+}
+
+/* Estilo geral de todos os modais, no caso o botao de fechar o botao */
+.container-model div button{
+    background: transparent;
+    border: none;
+
+    color: var(--cor-branco);
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* Estilo do form que esta no modal cadastrar e atualizar tarefa */
+.padrao-form{
+    width: 100%;
+    padding: 1em;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* Estilo do form: estou colocar design no input e textarea */
+.padrao-form label input,textarea{
+    display: block;
+    width: 100%;
+    height: 40px;
+    border-radius: 0 13px;
+    border: 1px solid #d3d3d3;
+
+    padding: 0.5em 1em;
+    font-size: 15px;
+}
+
+/* Estilo do form: estou colocar design textarea */
+.padrao-form label textarea{
+    resize: none;
+    height: 150px;
+}
+
+/* Estilo do form: estou colocar um design no botao que vai cadastrar e atualizar tarefa */
+.padrao-form button{
+    height: 50px;
+    width: 50%;
+
+    border-radius: 13px;
+    border: none;
+    font-weight: bold;
+
+    background-color: #20c997;
+    align-self: flex-end;
+    color: var(--cor-branco);
+    cursor: pointer;
+}
+
+/* Estilo de todos os modais que aparece no projeto, isso seria a base de cada um */
+#model-mais p {
+    padding: 1em;
+}
+
+/* Responsividade para telas menores que 768px */
+/* Coloquei somente no card que é cada tarefa e no titulo da tarefa  */
+@media (max-width:768px){
+    .card{
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+
+
+    }
+
+    .card p{    
+        text-align: center;
+    }
+}

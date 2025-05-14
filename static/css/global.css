@@ -1,0 +1,68 @@
+:root {
+    /* Definição de variáveis globais para cores, facilita manutenção */
+    --cor-vermelho: #dc3545;
+    --cor-preto: #000000;
+    --cor-branco: #ffffff;
+}
+
+* {
+    /* Garante que padding e border não alterem as dimensões dos elementos */
+    box-sizing: border-box;
+    
+    /* Remove espaçamento padrão */
+    padding: 0;
+    margin: 0;
+
+    /* Fonte padrão para toda a aplicação */
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #f5f6f8;
+}
+
+input, select, textarea {
+    /* Remove o contorno azul ao focar nos inputs */
+    outline: none;
+}
+
+a {
+    /* Remove sublinhado de links */
+    text-decoration: none;
+}
+
+/* CONFIGURACAO DO CSS GLOBAL DO HEADER */
+header {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;        
+
+    padding: 0.5em; 
+    flex-wrap: wrap;
+
+
+    background: url(https://mercantilnovaera.vteximg.com.br/arquivos/banner-targa-ne.png);
+}
+
+header img {
+    width: 200px; 
+}
+
+header #titulo {
+    color: var(--cor-branco);
+    white-space: nowrap;
+}
+
+/* Responsividade para telas menores que 851px */
+@media (max-width: 851px) {
+    header {
+        justify-content: center;
+    }
+
+    header #titulo {
+        white-space: normal;
+        text-align: center;
+    }   
+}
